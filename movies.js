@@ -1,4 +1,4 @@
-fetch("db.json")
+fetch("http://localhost:3000/films")
 .then(function(response){
   if(!response.ok){
     throw new Error('Network response was not ok');
@@ -12,6 +12,7 @@ fetch("db.json")
   console.error('Something went wrong with retrieving the lodgings!')
   console.error(error);
 })
+
 async function getText(file) {
   let myObject = await fetch("http//localhost:3000/films");
   let myText = await myObject.text();
@@ -44,7 +45,7 @@ let btn =document.getElementById('btnClick')
 let image= document.getElementById('image')
 
 btn.addEventListener('Click',function (){
-fetch("http//localhost:3000/films")
+fetch("http://localhost:3000/films")
 .then(res =>res.json())
 .then(result =>{
 console.log(result)
